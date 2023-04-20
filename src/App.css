@@ -282,6 +282,13 @@ input[type="number"]::-webkit-inner-spin-button {
   outline: none;
 }
 
+.delete-btn:hover {
+    color: #f7130fd7;
+    transition: color 0.5s;
+    box-shadow: 0 0.5rem 1rem rgba(69, 69, 69, 0.2);
+    font-size: 2.1rem;
+}
+
 @media (max-width: 1500px) {
   html {
     font-size: 58%;
