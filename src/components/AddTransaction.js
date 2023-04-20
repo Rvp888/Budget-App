@@ -3,8 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import { GlobalContext } from "../context/GlobalState";
 
 const AddTransaction = () => {
-  const { addIncome } = useContext(GlobalContext);
-  const { addExpense } = useContext(GlobalContext);
+  const { addIncome, addExpense } = useContext(GlobalContext);
 
   const [income, setIncome] = useState({
     incomeText: "",
@@ -25,6 +24,10 @@ const AddTransaction = () => {
       incomeAmount: incomeAmount * 1,
     };
     addIncome(newIncomeTransaction);
+    setIncome({
+        incomeText: "",
+        incomeAmount: 0,
+    });
   };
 
   const [expense, setExpense] = useState({
@@ -46,6 +49,10 @@ const AddTransaction = () => {
       expenseAmount: expenseAmount * 1,
     };
     addExpense(newExpenseTransaction);
+    setExpense({
+        expenseText: "",
+        expenseAmount: 0,
+    });
   };
 
   return (
@@ -55,6 +62,7 @@ const AddTransaction = () => {
           <input
             type="text"
             name="incomeText"
+            value={incomeText}
             placeholder="Add Income..."
             autoComplete="off"
             onChange={onChangeIncome}
@@ -62,6 +70,7 @@ const AddTransaction = () => {
           <input
             type="number"
             name="incomeAmount"
+            value={incomeAmount}
             placeholder="Amount"
             autoComplete="off"
             onChange={onChangeIncome}
@@ -74,6 +83,7 @@ const AddTransaction = () => {
           <input
             type="text"
             name="expenseText"
+            value={expenseText}
             placeholder="Add Expense..."
             autoComplete="off"
             onChange={onChangeExpense}
@@ -81,6 +91,7 @@ const AddTransaction = () => {
           <input
             type="number"
             name="expenseAmount"
+            value={expenseAmount}
             placeholder="Amount"
             autoComplete="off"
             onChange={onChangeExpense}
