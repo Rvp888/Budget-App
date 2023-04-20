@@ -10,7 +10,7 @@ const IncomeList = () => {
       <h2>Transaction History</h2>
       <ul className="transaction-list">
         {incomeTransactions.map((incomeTransaction) => (
-          <IncomeTransactions incomeTransaction={incomeTransaction} />
+          <IncomeTransactions key={incomeTransaction.id} incomeTransaction={incomeTransaction} />
         ))}
       </ul>
     </div>
