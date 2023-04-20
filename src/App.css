@@ -52,7 +52,7 @@ html {
 }
 
 .balance {
-  grid-column: 1 / 1;
+  grid-column: 1 / 2;
   grid-row: 3 / -1;
   display: flex;
   flex-direction: column;
@@ -115,7 +115,7 @@ html {
   grid-row: 2 / 4;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  /* grid-template-rows: repeat(2, 1fr); */
 }
 
 .input-group {
@@ -125,12 +125,12 @@ html {
 
 .income {
   grid-column: 1 / 2;
-  grid-row: 1 / -1;
+  /* grid-row: 1 / -1; */
 }
 
 .expense {
   grid-column: 2 / -1;
-  grid-row: 1 / -1;
+  /* grid-row: 1 / -1; */
 }
 
 .input-group input:not([type="submit"]) {
@@ -173,7 +173,7 @@ html {
 }
 
 .input-group input[type="submit"]:active {
-  transform: translateY(0.3rem);
+  transform: translateY(0.2rem);
 }
 
 .income input[type="submit"] {
@@ -213,7 +213,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .transaction-list {
   width: 92%;
   max-height: 77.2%;
-  overflow: hidden;
+  /* overflow: hidden; */
   overflow-y: auto;
 }
 
@@ -250,6 +250,7 @@ input[type="number"]::-webkit-inner-spin-button {
   display: flex;
   justify-content: space-between;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
 .transactions-income .transaction {
@@ -265,7 +266,8 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .transaction-amount {
-  transform: translateX(6rem);
+  position: absolute;
+  right: 1rem;
 }
 
 .delete-btn {
