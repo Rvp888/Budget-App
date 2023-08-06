@@ -8,7 +8,7 @@ const initialState = {
     JSON.parse(localStorage.getItem("expenseTransactions")) || [],
 };
 
-export const GlobalContext = createContext(initialState);
+export const GlobalContext = createContext();
 
 export const GlobalContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
